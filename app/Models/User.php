@@ -37,6 +37,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * 头像处理
+     * @param string $size
+     * @return string
+     */
     public function gravatar($size='100')
     {
         $hash = md5(strtolower(trim($this->attributes['email'])));
